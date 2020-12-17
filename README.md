@@ -9,9 +9,24 @@ How to use this code:
 6. Drag the 'Start_Patterns_for_Testing' file into the SwiftForth console.
 7. Drag the 'Export_and_Display' file into the SwiftForth console.
 8. Decide on a starting setup, see below, and choose to display and/or export data from the Life Program, see below.
+9. Note that the generation counter limit (for exporting data) is set to 1000 by default but can be changed by writing into the console:
+      X gen_limit ! 
+      where X is the limit you want. 
 
 Rule sets:
 
-Starting setups:
+Starting setups for manual input:
+- make_glider: create a glider in the middle of the array which travels up and to the right such that it hits the top right corner of the array
+- pi-heptomino: create the methuselah seed, pi-heptomino, in the middle of the array
+- e-heptomino: create the methuselah seed, e-heptomino, in the middle of the array
+- random-life-%: use this to start the array with a random array of 0's and 1's where the 1's occupy a desired % of the entire available population, determined first using:
+       X life% !
+       where X is the % you want (values 0 to 100). 
+- reset_array: be sure to use this to clear the array if you want a fresh start with something else!
+- show_array: use this to print the 0 and 1 values of the starting array to the console 
 
-Displaying and/or exporting data:
+Display and/or export data by typing one of the following words into the console:
+- go-life: displays the evolution of life from a given starting array, stops with key press
+- go-data: displays the evolution of life from a given starting array and exports population data, stops after generation counter reaches generation limit
+- go-data-only: tracks the evolution of life from a given starting array and exports population data, stops after generation counter reaches generation limit, does not open display
+- go-data-all: tracks the evolution of life and exports population data, stops after generation counter reaches generation limit and repeats for every integer % of a starting population, prints the starting % of the population with each loop to indicate how far through data collection it is, does not open display
