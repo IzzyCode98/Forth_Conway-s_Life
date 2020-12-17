@@ -361,16 +361,6 @@ bmp-APP-CLASS                   { Call class for displaying bmp's in a child win
   10 ms
   ;
 
-{ ----------------------------- Run Test Output Routines ------------------------------- }
-
-
-\  go-copy  { Demo copy to screen routine }
-
-   go-dark  { Demo set, set, reset to screen routine }
-
-   go-stretch  { Demo stretch to screen routine }
-
-{ -------------------------------- Life Stuff Goes Here -------------------------------- }
 
 
 

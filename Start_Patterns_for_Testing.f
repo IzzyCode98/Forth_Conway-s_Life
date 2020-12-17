@@ -20,8 +20,8 @@ variable life%		{ choose the % of starting live cells you want }
 1 mid @ 1 - mid @ array_!
 1 mid @ 1 + mid @ 1 + array_!
 1 mid @ 1 + mid @ 2 + array_!
-1 mid @ 1 - mid @ 1 - array_!
-1 mid @ 1 - mid @ 2 - array_! ;
+1 mid @ 1 - mid @ 1 + array_!
+1 mid @ 1 - mid @ 2 + array_! ;
 
 : e-heptomino
 1 mid @ mid @ array_!
