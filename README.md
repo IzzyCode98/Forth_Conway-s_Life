@@ -2,7 +2,7 @@
 
 How to use this code:
 1. First, go into the Export_and_Display file and change the file address in the make-data-file definition to a location on your computer folder. Note: the file name should not contain any spaces.
-2. Decide what size array you would like between the options: 100x100, 500x500, 1000x1000
+2. Decide what size array you would like between the options: 100x100, 500x500
 3. Drag the 'Graphics_forXarray' file, where X is the array size you would like, into the SwiftForth console.
 4. Decide what rule set you would like to apply to your Life Array. See below for descriptions of the different rule sets.
 5. Drag the 'Conways_Life_X_Rules' file, where X represents the type of rule set you have chosen, into the SwiftForth console.
@@ -14,9 +14,11 @@ How to use this code:
       where X is the limit you want. 
 
 Rule sets:
-- Conways_Life_Original_Rules: this uses the original rule set for Conway's Game of Life - live cells stay alive with 2 or 3 neighbours, dead cells come alive with 3 neighbours
-- Conways_Life_MoreReproductive_Rules: this adds rules such that dead cells can also come alive with 2 neighbours
-- Conways_Life_MoreResource_Rules: this adds rules such that live cells also stay alive with 4 neighbours and dead cells can also come alive with 4 neighbours 
+- Conways_Life_Original_Rules: this uses the original rule set for Conway's Game of Life - cells stay alive with 2 or 3 neighbours and come alive with 3 neighbours
+- Conways_Life_MoreReproductive_Rules: this changes the rules so cells stay alive with 2 or 3 neighbours and come alive with 2 or 3 neighbours
+- Conways_Life_MoreResource_Rules: this changes the rules so cells stay alive with 2, 3, or 4 neighbours and come alive with 3 or 4 neighbours
+- Conways_Life_Solitary_Rules: this changes the rules so cells stay alive with 0, 1, or 2 neighbours and come alive with 2 neighbours
+- Conways_Life_Group_Rules: this changes the rules so cells stay alive with 4, 5, or 6 neighbours and come alive with 5 or 6 neighbours
 
 Starting setups for manual input:
 - make_glider: create a glider in the middle of the array which travels up and to the right such that it hits the top right corner of the array
