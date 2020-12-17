@@ -14,6 +14,9 @@ How to use this code:
       where X is the limit you want. 
 
 Rule sets:
+- Conways_Life_Original_Rules: this uses the original rule set for Conway's Game of Life - live cells stay alive with 2 or 3 neighbours, dead cells come alive with 3 neighbours
+- Conways_Life_MoreReproductive_Rules: this adds rules such that dead cells can also come alive with 2 neighbours
+- Conways_Life_MoreResource_Rules: this adds rules such that live cells also stay alive with 4 neighbours and dead cells can also come alive with 4 neighbours 
 
 Starting setups for manual input:
 - make_glider: create a glider in the middle of the array which travels up and to the right such that it hits the top right corner of the array
