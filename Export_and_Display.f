@@ -43,9 +43,11 @@ variable pop-data-id                             { Create Variable to hold file 
   ;
 
 
-{ ------------ go-data displays the evolution of life from a given starting array and exports population data, stops after 1000 generations ------------ }
+{ ------------ go-data displays the evolution of life from a given starting array and exports population data, stops after generation counter reaches generation limit ------------ }
 
 variable gen_counter
+variable gen_limit
+1000 gen_limit !
 
 : go-data                           { Draw bmp to screen at variable pixel size       }
   0 gen_counter !
@@ -62,14 +64,14 @@ variable gen_counter
   count_neighbour
   next_gen
   1 gen_counter +!
-  gen_counter @ 1000 =                             { Break test loop after 1000 generations}
+  gen_counter @ gen_limit @ =                             { Break test loop after 1000 generations}
   until                             
   cr ." Ending stretch to window test " 
   cr cr
   close-data-file ;
 
 
-{ ------------ go-data-only tracks the evolution of life from a given starting array and exports population data, stops after 1000 generations, does not open display ------------ }
+{ ------------ go-data-only tracks the evolution of life from a given starting array and exports population data, stops after generation counter reaches generation limit, does not open display ------------ }
 
 : go-data-only                           
   0 gen_counter !
@@ -83,30 +85,20 @@ variable gen_counter
   count_neighbour
   next_gen
   1 gen_counter +!
-  gen_counter @ 1000 =                             { Break test loop after 1000 generations}
+  gen_counter @ gen_limit @ =                             { Break test loop after 1000 generations}
   until                             
   cr ." Ending data collection " 
   cr cr
   close-data-file ;
 
 
-{ ------------ go-data-all tracks the evolution of life and exports population data, stops after 1000 generations and repeats for every integer % of a starting population, does not open display ------------ }
-
-variable life%
-
-: random-life-%
-  array-size @ 0 do
-  100 RND
-  life% @ < if 1 
-  else 0 then
-  array-address @ i + c! loop ;
-
+{ ------------ go-data-all tracks the evolution of life and exports population data, stops after generation counter reaches generation limit and repeats for every integer % of a starting population, does not open display ------------ }
 
 : go-data-all
   make-data-file
   cr ." Starting data collection " 
   cr cr
-  101 0 do i life% !
+  101 0 do i dup . life% !		{ prints the starting % of the population with each loop to indicate how far through data collection it is }
   reset_array
   random-life-%                           
   0 gen_counter !  
@@ -117,7 +109,7 @@ variable life%
   count_neighbour
   next_gen
   1 gen_counter +!
-  gen_counter @ 1000 =                             { Break test loop after 1000 generations}
+  gen_counter @ gen_limit @ =                             { Break test loop after 1000 generations}
   until  
   loop                           
   cr ." Ending data collection " 
