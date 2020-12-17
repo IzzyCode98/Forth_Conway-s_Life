@@ -9,7 +9,7 @@ variable pop                                      { population variable }
 variable pop-data-id                             { Create Variable to hold file id handle }
 
 : make-data-file                                  { Create a test file to read / write to  }
-  s" C:\Users\isabe\Downloads\Conways_Life_Helper_Code_Examples_V4\ConwaysLife\Diff_Array_Life\popul_data.dat" r/w create-file drop  { Create the file } 
+  s" C:\Users\isabe\Desktop\DataCollection\popul_data.dat" r/w create-file drop  { Create the file } 
   pop-data-id !                                  { Store file handle for later use }
 ;
 

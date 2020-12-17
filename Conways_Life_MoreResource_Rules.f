@@ -80,10 +80,12 @@ neighbour_array !
 { ------------ apply Conway's Life rules, replace original array with next generation cells  ------------ }
 
 : next_gen array-size @ 0 do array-address @ i + c@ case
-  0 of neighbour_array @ i + c@ case 			{ rules for dead cells coming to life }
+  0 of neighbour_array @ i + c@ case  			{ rules for dead cells coming to life }
+	4 of 1 array-address @ i + c! endof
 	3 of 1 array-address @ i + c! endof
 	0 array-address @ i + c! endcase endof
   1 of neighbour_array @ i + c@ case			{ rules for live cells staying alive }
+	4 of 1 array-address @ i + c! endof
 	3 of 1 array-address @ i + c! endof 
 	2 of 1 array-address @ i + c! endof 
 	0 array-address @ i + c! endcase endof

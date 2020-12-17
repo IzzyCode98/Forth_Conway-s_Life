@@ -46,9 +46,9 @@ variable bmp-y-start    { Initial y position of upper left corner               
 
 variable bmp-window-handle  { Variable to store the handle used to ID display window     }
 
-100 bmp-x-size !                              { Set x size of bmp in pixels             }
+500 bmp-x-size !                              { Set x size of bmp in pixels             }
 
-100 bmp-y-size !                              { Set y size of bmp in pixels             }
+500 bmp-y-size !                              { Set y size of bmp in pixels             }
 
 bmp-x-size @ 4 / 1 max 4 *  bmp-x-size !       { Trim x-size to integer product of 4     }
 
