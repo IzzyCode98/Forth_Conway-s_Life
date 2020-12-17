@@ -24,6 +24,7 @@ Starting setups for manual input:
        where X is the % you want (values 0 to 100). 
 - reset_array: be sure to use this to clear the array if you want a fresh start with something else!
 - show_array: use this to print the 0 and 1 values of the starting array to the console 
+- you can build your own starting patterns using array_! ( n x y -- ) which puts the value n (which should be 0 or 1) at the (x,y) coordinate of the array
 
 Display and/or export data by typing one of the following words into the console:
 - go-life: displays the evolution of life from a given starting array, stops with key press
