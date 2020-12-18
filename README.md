@@ -5,20 +5,24 @@ How to use this code:
 2. Decide what size array you would like between the options: 100x100, 500x500
 3. Drag the 'Graphics_forXarray' file, where X is the array size you would like, into the SwiftForth console.
 4. Decide what rule set you would like to apply to your Life Array. See below for descriptions of the different rule sets.
-5. Drag the 'Conways_Life_X_Rules' file, where X represents the type of rule set you have chosen, into the SwiftForth console.
-6. Drag the 'Start_Patterns_for_Testing' file into the SwiftForth console.
+5. Drag the 'Rules_X' file, where X represents the type of rule set you have chosen, into the SwiftForth console.
+6. Drag the 'Start_Patterns' file into the SwiftForth console.
 7. Drag the 'Export_and_Display' file into the SwiftForth console.
 8. Decide on a starting setup, see below, and choose to display and/or export data from the Life Program, see below.
 9. Note that the generation counter limit (for exporting data) is set to 1000 by default but can be changed by writing into the console:
       X gen_limit ! 
       where X is the limit you want. 
 
-Rule sets:
-- Conways_Life_Original_Rules: this uses the original rule set for Conway's Game of Life - cells stay alive with 2 or 3 neighbours and come alive with 3 neighbours
-- Conways_Life_MoreReproductive_Rules: this changes the rules so cells stay alive with 2 or 3 neighbours and come alive with 2 or 3 neighbours
-- Conways_Life_MoreResource_Rules: this changes the rules so cells stay alive with 2, 3, or 4 neighbours and come alive with 3 or 4 neighbours
-- Conways_Life_Solitary_Rules: this changes the rules so cells stay alive with 0, 1, or 2 neighbours and come alive with 2 neighbours
-- Conways_Life_Group_Rules: this changes the rules so cells stay alive with 4, 5, or 6 neighbours and come alive with 5 or 6 neighbours
+Rule sets - naming convention:
+The original rule set for Conway's Game of Life can be represented as B3 S23:
+      - the numbers following B give values for live neighbours required to be born,
+      - the numbers following S give the values for live neighbours required for a cell to survive.
+Therefore, the other rule sets we consider are:
+- B23 S23 – represents a population that is more reproductive
+- B34 S234 – represents a population with more resources
+- B2 S012 – represents a population that is more sensitive to overcrowding and less sensitive to loneliness
+- B56 S456 – represents a population that is more sensitive to loneliness
+- B34 S23 – represents a population that is more reproductive but constrained by resources
 
 Starting setups for manual input:
 - make_glider: create a glider in the middle of the array which travels up and to the right such that it hits the top right corner of the array
