@@ -12,6 +12,7 @@ How to use this code:
 9. Note that the generation counter limit (for exporting data) is set to 1000 by default but can be changed by writing into the console:
       X gen_limit ! 
       where X is the limit you want. 
+10. To get a glimpse of what our report will be analysing and how we have used the data from our program, see the PPT file: Linking Conway’s Game of Life To the Logistic Map
 
 Rule sets - naming convention:
 The original rule set for Conway's Game of Life can be represented as B3 S23:
